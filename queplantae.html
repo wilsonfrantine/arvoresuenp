@@ -57,9 +57,7 @@
         <div class="result-container-item" id="commonName"></div>
         <div class="result-container-item" id="family"></div>
         <div class="result-container-item" id="type"></div>
-        <div class="result-container-item" id="imagemDiv">
-            <img id="imagem" src="" alt=""></img>
-        </div>
+        <div class="result-container-item" id="descricao"></div>
     </div>
     <div class="footer">
         <img src="images/bioccp.png" alt="BioCCP">
@@ -89,6 +87,7 @@
             var commonNameDiv = document.getElementById('commonName');
             var familyDiv = document.getElementById('family');
             var typeDiv = document.getElementById('type');
+            var descricaoDiv = document.getElementById('descricao');
 
         
             if (valorQrcode) {
@@ -134,11 +133,7 @@
                             commonNameDiv.textContent = row[2];
                             familyDiv.textContent = row[3];
                             typeDiv.textContent = row[4];
-
-                            var especie = row[0].toLowerCase().replace(/\s+/g, '_');
-                            var imagemSrc = `images/trees/${especie}.jpg`;
-                            var imagemDiv = document.getElementById('imagem');
-                            imagemDiv.src = imagemSrc;
+                            descricaoDiv.textContent = row[5];
                             
                             break; // Encerra a busca após encontrar a correspondência
                         }
