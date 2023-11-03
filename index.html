@@ -10,34 +10,35 @@
             height: 100%;
             margin: 0;
             display: flex;
+            flex-direction: column; /* Para empilhar os elementos verticalmente */
             justify-content: center;
             align-items: center;
             background-image: url('images/background.jpeg');
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
-            background-color: rgba(255, 255, 255, 0.3);
+            background-color: rgba(255, 255, 255, 0.5); /* Transparência de 50% */
             font-family: 'Roboto', sans-serif;
         }
         .container {
             text-align: center;
             color: rgba(0, 0, 0, 0.2);
-            font-size: 8vw; /* Tamanho de fonte em relação à largura da tela */
+            font-size: 8vw;
+            margin-bottom: 2vh;
         }
         button {
             background-color: #8bc34a;
             color: white;
-            font-size: 3vw; /* Tamanho de fonte em relação à largura da tela */
-            padding: 2% 4%; /* Espaçamento interno em relação à largura e altura do botão */
+            font-size: 3vw;
+            padding: 2% 4%;
             border: none;
             cursor: pointer;
             font-family: 'Roboto', sans-serif;
-            width: 30%;
         }
     </style>
 </head>
 <body>
-    <div class="container">Árvores UENP</div>
+    <div class="container">Árvores UENP</div></p>
     <button id="botaoRedirecionar">Clique e saiba mais...</button>
 
     <script>
