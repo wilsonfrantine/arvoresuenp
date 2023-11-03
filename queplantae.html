@@ -52,7 +52,13 @@
 </head>
 <body>
     <div class="container">Árvores UENP</div>
-    <div class="result-container" id="resultContainer"></div>
+    <div class="result-container" id="resultContainer">
+        <div class="result-container-item" id=specie></div>
+        <div class="result-container-item" id=commonName></div>
+        <div class="result-container-item" id=family></div>
+        <div class="result-container-item" id=type></div>
+        <div class="result-container-item" id=image></div>
+    </div>
     <div class="footer">
         <img src="images/bioccp.png" alt="BioCCP">
         <img src="images/uenp_ccp.png" alt="UENP CCP">
@@ -117,6 +123,11 @@
                             }
                             // row agora contém os dados da linha correspondente
                             resultContainer.textContent = row.join(', '); // Exemplo de exibição
+                            specie.textContent(row[0]);
+                            commonName.textContent(row[2]);
+                            family.textContent(row[3]);
+                            type.textContent(row[4]);
+                            
                             break; // Encerra a busca após encontrar a correspondência
                         }
                     }
