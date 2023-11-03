@@ -16,23 +16,23 @@
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
-            background-color: rgba(255, 255, 255, 0.3); 
-            font-family: 'Roboto', sans-serif; /* Fonte Roboto */
+            background-color: rgba(255, 255, 255, 0.3);
+            font-family: 'Roboto', sans-serif;
         }
         .container {
             text-align: center;
             color: rgba(0, 0, 0, 0.2);
-            font-size: 30vw; 
+            font-size: 8vw; /* Tamanho de fonte em relação à largura da tela */
         }
         button {
-            background-color: #8bc34a; 
+            background-color: #8bc34a;
             color: white;
-            font-size: 15vw; 
-            padding: 5% 10%; 
+            font-size: 3vw; /* Tamanho de fonte em relação à largura da tela */
+            padding: 2% 4%; /* Espaçamento interno em relação à largura e altura do botão */
             border: none;
             cursor: pointer;
             font-family: 'Roboto', sans-serif;
-            width: 50%;
+            width: 30%;
         }
     </style>
 </head>
@@ -42,6 +42,7 @@
 
     <script>
         document.getElementById('botaoRedirecionar').addEventListener('click', function() {
+            // Função para extrair o valor de um parâmetro da URL
             function obterValorParametro(nomeParametro) {
                 var urlSearchParams = new URLSearchParams(window.location.search);
                 return urlSearchParams.get(nomeParametro);
