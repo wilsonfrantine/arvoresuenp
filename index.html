@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Árvores UENP - Campus de Cornélio Procópio</title>
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        button {
+            background-color: #8bc34a; /* Verde claro */
+            color: white;
+            font-size: 16px;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <button id="botaoRedirecionar">Clique e saiba mais...</button>
+
+    <script>
+        document.getElementById('botaoRedirecionar').addEventListener('click', function() {
+            function obterValorParametro(nomeParametro) {
+                var urlSearchParams = new URLSearchParams(window.location.search);
+                return urlSearchParams.get(nomeParametro);
+            }
+
+            var valorQrcode = obterValorParametro('qrcode');
+
+            if (valorQrcode) {
+                var destino = "http://novapagina.com/arvores/" + valorQrcode + ".html";
+                window.location.href = destino;
+            } else {
+                console.error("QR Code não fornecido na URL.");
+            }
+        });
+    </script>
+</body>
+</html>
