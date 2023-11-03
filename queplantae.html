@@ -31,7 +31,7 @@
         .result-container {
             text-align: center;
             color: black;
-            font-size: 2vw;
+            font-size: 5vw;
         }
         .footer {
             display: flex;
@@ -47,6 +47,10 @@
             height: 50px;
             width: auto;
             margin: 0 10px;
+        }
+        #descricao {
+            font-size: 2vw;
+            text-align: left;
         }
     </style>
 </head>
@@ -133,7 +137,7 @@
                             commonNameDiv.textContent = row[2];
                             familyDiv.textContent = row[3];
                             typeDiv.textContent = row[4];
-                            descricaoDiv.textContent = row[5];
+                            descricaoDiv.textContent = row[6];
                             
                             break; // Encerra a busca após encontrar a correspondência
                         }
