@@ -59,11 +59,11 @@ document.addEventListener('DOMContentLoaded', function() {
                     }
                     // row agora contém os dados da linha correspondente
                     // resultContainer.textContent = row.join(', '); // Exemplo de exibição
-                    specieDiv.innerHTML = "<span font-size=2vw>Espécie: </span>" + '<i>row[0]</i>';
-                    commonNameDiv.innerHTML = "<span font-size=2vw>nome Comum: </span>" + row[2];
-                    familyDiv.textContent = "<span font-size=2vw>Família: </span>" + row[3];
+                    specieDiv.innerHTML = '<span font-size=2vw>' + "Espécie: "+'</span>' + '<i>'+row[0]+'</i>';
+                    commonNameDiv.innerHTML = '<span font-size=2vw>' + "Nome Comum: " + '</span>' + row[2];
+                    familyDiv.textContent = '<span font-size=2vw>'+ "Família: "+ '</span>' + row[3];
                     // typeDiv.textContent = "<span font-size=2vw>Aplicação: </span>"+ row[4];
-                    descricaoDiv.textContent = "<span font-size=2vw>Descrição: </span> <p></p>" + row[6];
+                    descricaoDiv.textContent = '<span font-size=2vw>' + "Descrição: " + '</span> <p></p>' + row[6];
                     
                     break; // Encerra a busca após encontrar a correspondência
                 }
