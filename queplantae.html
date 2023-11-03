@@ -102,7 +102,7 @@
                     // Percorre as células da coluna "especie" para encontrar a correspondência
                     var range = XLSX.utils.decode_range(sheet["!ref"]);
                     for (var R = range.s.r; R <= range.e.r; ++R) {
-                        var cell_address = {c:2, r:R}; // 2 é o índice da coluna "especie"
+                        var cell_address = {c:1, r:R}; // 1 é o índice da coluna "especie"
                         var cell_ref = XLSX.utils.encode_cell(cell_address);
                         var cell = sheet[cell_ref];
                         if (cell && cell.v.toLowerCase() === valorQrcode.toLowerCase()) {
