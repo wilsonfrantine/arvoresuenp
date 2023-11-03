@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Árvores UENP</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.4/xlsx.full.min.js"></script>
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            align-items: center;
+            background-image: url('images/background.jpeg');
+            background-blend-mode: overlay;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-color: rgba(255, 255, 255, 0.5);
+            font-family: 'Roboto', sans-serif;
+        }
+        .container {
+            text-align: center;
+            color: black;
+            font-size: 8vw;
+            margin-top: 10vh;
+        }
+        .result-container {
+            text-align: center;
+            color: black;
+            font-size: 2vw;
+        }
+        .footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 10%;
+            width: 100%;
+            background-color: rgba(0,0,0,0);
+            position: fixed;
+            bottom: 0;
+        }
+        .footer img {
+            height: 50px;
+            width: auto;
+            margin: 0 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">Árvores UENP</div>
+    <div class="result-container" id="resultContainer"></div>
+    <div class="footer">
+        <img src="images/bioccp.png" alt="BioCCP">
+        <img src="images/uenp_ccp.png" alt="UENP CCP">
+        <a href="https://www.instagram.com/biologiauenpccp/" target="_blank">
+            <img src="images/insta.png" alt="Instagram">
+        </a>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Função para extrair o valor de um parâmetro da URL
+            function obterValorParametro(nomeParametro) {
+                var urlSearchParams = new URLSearchParams(window.location.search);
+                return urlSearchParams.get(nomeParametro);
+            }
+
+            var valorQrcode = obterValorParametro('qrcode');
+            var resultContainer = document.getElementById('resultContainer');
+
+            if (valorQrcode) {
+                // URL da planilha
+                var urlPlanilha = "https://docs.google.com/spreadsheets/d/1ci31Dvp85tYBla0vmiY_wRPQ4SUhihFrSuqw4JcWKQs/export?format=xlsx";
+
+                // Requisição para obter o conteúdo da planilha
+                var xhr = new XMLHttpRequest();
+                xhr.open("GET", urlPlanilha, true);
+                xhr.responseType = "arraybuffer";
+
+                xhr.onload = function(e) {
+                    var arraybuffer = xhr.response;
+
+                    // Converte os dados para um workbook
+                    var data = new Uint8Array(arraybuffer);
+                    var workbook = XLSX.read(data, {type: "array"});
+
+                    // Obtém a primeira folha do workbook
+                    var sheet_name_list = workbook.SheetNames;
+                    var sheet = workbook.Sheets[sheet_name_list[0]];
+
+                    // Obtém a célula correspondente ao valor do qrcode
+                    var cell = sheet[valorQrcode];
+
+                    if (cell) {
+                        // Exibe o conteúdo da célula
+                        resultContainer.textContent = cell.v;
+                    } else {
+                        resultContainer.textContent = "QR Code não encontrado na planilha.";
+                    }
+                };
+
+                xhr.send();
+            } else {
+                resultContainer.textContent = "QR Code não fornecido na URL.";
+            }
+        });
+    </script>
+</body>
+</html>
