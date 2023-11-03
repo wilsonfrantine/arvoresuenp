@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Árvores UENP - Campus de Cornélio Procópio</title>
-     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap" rel="stylesheet">
+    <title>Redirecionamento com Botão</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap" rel="stylesheet">
     <style>
         body, html {
             height: 100%;
@@ -12,22 +12,32 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            font-color: #f2f2f2; /* Cinza claro */
+            background-image: url('images/background.jpeg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-color: rgba(255, 255, 255, 0.3); 
             font-family: 'Roboto', sans-serif; /* Fonte Roboto */
         }
+        .container {
+            text-align: center;
+            color: rgba(0, 0, 0, 0.2);
+            font-size: 30vw; 
+        }
         button {
-            background-color: #8bc34a; /* Verde claro */
+            background-color: #8bc34a; 
             color: white;
-            font-size: 16px;
-            padding: 10px 20px;
+            font-size: 15vw; 
+            padding: 5% 10%; 
             border: none;
             cursor: pointer;
-            font-family: 'Roboto', sans-serif; /* Fonte Roboto */
-            width: 30%; /* O botão ocupa 30% da largura da tela */
+            font-family: 'Roboto', sans-serif;
+            width: 50%;
         }
     </style>
 </head>
 <body>
+    <div class="container">Árvores UENP</div>
     <button id="botaoRedirecionar">Clique e saiba mais...</button>
 
     <script>
