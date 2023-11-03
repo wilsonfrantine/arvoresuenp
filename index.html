@@ -14,6 +14,7 @@
             justify-content: space-between;
             align-items: center;
             background-image: url('images/background.jpeg');
+            background-blend-mode: overley;
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
@@ -40,7 +41,9 @@
 </head>
 <body>
     <div class="container">Árvores UENP</div>
-    <button id="botaoRedirecionar">Clique e saiba mais...</button>
+    <div class="container">
+        <button id="botaoRedirecionar">Clique e saiba mais...</button>
+    </div>
 
     <script>
         document.getElementById('botaoRedirecionar').addEventListener('click', function() {
