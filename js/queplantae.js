@@ -61,9 +61,9 @@ document.addEventListener('DOMContentLoaded', function() {
                     // resultContainer.textContent = row.join(', '); // Exemplo de exibição
                     specieDiv.innerHTML = '<span font-size=2vw>' + "Espécie: "+'</span>' + '<i>'+row[0]+'</i>';
                     commonNameDiv.innerHTML = '<span font-size=2vw>' + "Nome Comum: " + '</span>' + row[2];
-                    familyDiv.textContent = '<span font-size=2vw>' + "Família: " + '</span>' + row[3];
+                    familyDiv.innerHTML = '<div font-size=2vw>' + "Família: " + '</div>' + row[3];
                     // typeDiv.textContent = "<span font-size=2vw>Aplicação: </span>"+ row[4];
-                    descricaoDiv.textContent = '<span font-size=2vw>' + "Descrição: " + '</span> <p></p>' + row[6];
+                    descricaoDiv.textContent = '<div font-size=2vw>' + "Descrição: " + '</div> <p></p>' + '<div>' + row[6] '</div>';
                     
                     break; // Encerra a busca após encontrar a correspondência
                 }
