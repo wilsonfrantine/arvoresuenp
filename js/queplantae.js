@@ -59,7 +59,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     }
                     // row agora contém os dados da linha correspondente
                     // resultContainer.textContent = row.join(', '); // Exemplo de exibição
-                    specieDiv.innerHTML = '<h4>' + "Espécie: " + '</h4><h2><i>'+row[0]+'</i></h2>';
+                    specieDiv.innerHTML = '<h2>Espécie: <i>'+row[0]+'</i></h2>';
                     commonNameDiv.innerHTML = '<h2>' + row[2] + '</h2' ;
                     familyDiv.innerHTML = '<h3>' + "Família: " + row[3] + '</h3>';
                     // typeDiv.textContent = "<span font-size=2vw>Aplicação: </span>"+ row[4];
