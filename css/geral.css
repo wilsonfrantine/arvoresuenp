@@ -44,7 +44,7 @@ body, html {
     bottom: 0;
 }
 .footer img {
-    height: 50px;
+    height: 6vw;
     width: auto;
     margin: 0 10px;
 }
@@ -68,6 +68,9 @@ body, html {
         min-height: 150px;
         margin-top: 200px;
     }
+    .footer img{
+        min-height:50px
+    }
 }
 
 @media only screen and (min-width: 768px) {
@@ -84,5 +87,9 @@ body, html {
     .container{
         min-height: 100px;
         margin-top: 250px;
+    }
+    
+    .footer img{
+        min-height:60px
     }
 }
