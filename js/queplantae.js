@@ -59,9 +59,9 @@ document.addEventListener('DOMContentLoaded', function() {
                     }
                     // row agora contém os dados da linha correspondente
                     // resultContainer.textContent = row.join(', '); // Exemplo de exibição
-                    specieDiv.innerHTML = '<span font-size=2vw>' + "Espécie: "+'</span>' + '<i>'+row[0]+'</i>';
-                    commonNameDiv.innerHTML = row[2];
-                    familyDiv.innerHTML = "Família: " + row[3];
+                    specieDiv.innerHTML = '<h4>' + "Espécie: " + '</h4><h2><i>'+row[0]+'</i></h2>';
+                    commonNameDiv.innerHTML = '<h2>' + row[2] + '</h2' ;
+                    familyDiv.innerHTML = '<h3>' + "Família: " + row[3] + '</h3>';
                     // typeDiv.textContent = "<span font-size=2vw>Aplicação: </span>"+ row[4];
                     descricaoDiv.innerHTML = '<h3>' + "Descrição: " + '</h3> <p></p>' + row[6];
                     
