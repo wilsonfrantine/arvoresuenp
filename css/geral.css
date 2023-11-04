@@ -6,7 +6,7 @@ body, html {
     justify-content: space-evenly;
     align-items: center;
     background-image: url('../images/background.jpeg');
-    background-blend-mode: overlay;
+    /* background-blend-mode: overlay; */
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -42,4 +42,5 @@ body, html {
 #descricao {
     font-size: 2vw;
     text-align: left;
+    padding: 2vw;
 }
