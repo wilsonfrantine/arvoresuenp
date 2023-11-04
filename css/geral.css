@@ -16,13 +16,13 @@ body, html {
 .container {
     text-align: center;
     color: black;
-    font-size: 8vw;
+    font-size: 2em;
     margin-top: 10vh;
 }
 .result-container {
     text-align: center;
     color: black;
-    font-size: 5vw;
+    font-size: 1em;
 }
 .footer {
     display: flex;
@@ -40,7 +40,24 @@ body, html {
     margin: 0 10px;
 }
 #descricao {
-    font-size: 2vw;
+    font-size: 0.8em;
     text-align: left;
     padding: 2vw;
+}
+@media only screen and (max-width: 767px) {
+    body {
+        font-size: 16px;
+    }
+    h1 {
+        font-size: 24px;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    body {
+        font-size: 18px;
+    }
+    h1 {
+        font-size: 30px;
+    }
 }
