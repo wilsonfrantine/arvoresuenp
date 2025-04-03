@@ -26,12 +26,13 @@ document.addEventListener("DOMContentLoaded", () => {
         const imgSrc = `images/trees/${especieFormatada || "placeholder"}.jpg`;
 
         item.innerHTML = `
-          <a href="queplantae.html?qrcode=${especieFormatada}">
-            <img src="${imgSrc}" alt="${especie.nomepopular}" 
-              onerror="this.onerror=null; this.outerHTML='<div class=\'fallback-icon\'><i class=\'fas fa-seedling\'></i></div>';">
-          </a>
-          <p><strong>${especie.nomepopular || "Sem nome"}</strong><br><em>${especie.especie || ""}</em></p>
+        <a href="queplantae.html?qrcode=${especieFormatada}">
+            <img src="images/trees/${especieFormatada || "placeholder"}.jpg" alt="${especie.nomepopular}" 
+            onerror="this.onerror=null; this.src='images/fallback.png';">
+        </a>
+        <p><strong>${especie.nomepopular || "Sem nome"}</strong><br><em>${especie.especie || ""}</em></p>
         `;
+
         galeria.appendChild(item);
       });
     } catch (err) {
