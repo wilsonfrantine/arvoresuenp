@@ -31,7 +31,7 @@ document.addEventListener("DOMContentLoaded", () => {
   let html5QrCode = null;
 
   async function carregarEspecies() {
-    const planilhaURL = "https://docs.google.com/spreadsheets/d/1ci31DvpqUOQwno7dRzC0PZECnpArKPdoL7z9_pYcoVY/export?format=xlsx";
+    const planilhaURL = "https://docs.google.com/spreadsheets/d/1ci31Dvp85tYBla0vmiY_wRPQ4SUhihFrSuqw4JcWKQs/export?format=xlsx";
     try {
       const response = await fetch(planilhaURL);
       const arrayBuffer = await response.arrayBuffer();

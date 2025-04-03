@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     async function fetchData(qrcode) {
-        const url = "https://docs.google.com/spreadsheets/d/1ci31DvpqUOQwno7dRzC0PZECnpArKPdoL7z9_pYcoVY/export?format=xlsx";
+        const url = "https://docs.google.com/spreadsheets/d/1ci31Dvp85tYBla0vmiY_wRPQ4SUhihFrSuqw4JcWKQs/export?format=xlsx";
         try {
             const response = await fetch(url);
             const arrayBuffer = await response.arrayBuffer();
