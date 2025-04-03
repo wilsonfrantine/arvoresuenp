@@ -1,0 +1,192 @@
+/* Página queplantae.html */
+
+.container-id {
+  margin-top: 2rem;
+  text-align: center;
+  padding: 2rem 1rem;
+}
+
+.container-id h1 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  color: #1c3d29;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.result-container {
+  background: rgba(255, 255, 255, 0.6);
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin-top: 1rem;
+  box-shadow: 0 0 8px rgba(0,0,0,0.1);
+  backdrop-filter: blur(4px);
+}
+
+.result-container-item {
+  margin: 0.5rem auto;
+  font-size: 1rem;
+  line-height: 1.5;
+  max-width: 640px;
+}
+
+.collapsible {
+  overflow: hidden;
+  max-height: 4.5em;
+  position: relative;
+}
+
+.collapsible.expanded {
+  max-height: none;
+}
+
+.read-more-button {
+  margin-top: 1rem;
+  background: none;
+  border: none;
+  color: #1c3d29;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.read-more-button:hover {
+  text-decoration: underline;
+}
+
+.button-block.double {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.action-button.back-button {
+  background-color: #ccc;
+  color: #333;
+}
+
+.action-button.back-button:hover {
+  background-color: #bbb;
+  color: #000;
+}
+
+/* Melhorias visuais na página de identificação */
+
+.result-container {
+  background: rgba(255, 255, 255, 0.85); /* Mais opaco para leitura */
+  border-radius: 12px;
+  padding: 2rem 2rem;
+  margin-top: 2rem;
+  max-width: 720px;
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(8px);
+}
+
+.container-id h1 {
+  font-size: 2rem;
+  color: #1c3d29;
+  margin-bottom: 1rem;
+}
+
+.read-more-button {
+  margin-top: 1.2rem;
+  color: #1c3d29;
+  background: none;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+  font-size: 0.95rem;
+}
+
+.credit {
+  opacity: 0.8;
+  color: #333;
+  font-size: 0.85rem;
+  margin-top: 1rem;
+}
+
+.credit a {
+  color: #1c3d29;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.credit a:hover {
+  text-decoration: underline;
+}
+
+.result-container {
+  background: none !important;
+  border: none !important;
+  box-shadow: none !important;
+  backdrop-filter: none !important;
+  padding: 0 1.5rem;
+  max-width: 760px;
+  margin: 0 auto;
+  color: #1a1a1a;
+  font-size: 1.15rem;
+  line-height: 1.7;
+}
+.result-container-item {
+  background: rgba(255, 255, 255, 0.7);
+  padding: 1rem;
+  margin: 1.2rem 0;
+  border-left: 5px solid #2f5d3f;
+  border-radius: 6px;
+  font-size: 1.1rem;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+}
+.result-container-item strong {
+  color: #2f5d3f;
+  font-weight: bold;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.footer {
+  margin-top: 2rem;
+  padding-top: 2rem;
+  text-align: center;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.container-id {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem 1.5rem;
+}
+
+footer.footer {
+  margin-top: 3rem;
+  padding: 1rem 0;
+  flex-shrink: 0;
+}
+
+/* Para telas maiores ou orientação horizontal */
+@media screen and (min-width: 768px) {
+  .container-id {
+    padding-top: 15rem;
+  }
+}

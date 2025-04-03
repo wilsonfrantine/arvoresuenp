@@ -1,31 +1,66 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <title>Árvores UENP</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/geral.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.4/xlsx.full.min.js"></script>
-    <script src="js/queplantae.js" defer></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>Árvores UENP - Identificação</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/geral.css" />
+  <link rel="stylesheet" href="css/identificacao.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+  <script src="https://unpkg.com/html5-qrcode"></script>
+  <script src="js/queplantae.js" defer></script>
 </head>
-<body>
-    <main class="wrapper">
-        <div class="container"></div>
+<body class="fade-in">
+  <div id="splash">
+    <div class="spinner"></div>
+    <p>Carregando...</p>
+  </div>
 
-        <div class="result-container" id="resultContainer">
-            <div class="result-container-item" id="commonName"></div>
-            <div class="result-container-item" id="specie"></div>
-            <div class="result-container-item" id="family"></div>
-            <div class="result-container-item" id="type"></div>
-            <div class="result-container-item" id="descricao"></div>
-        </div>
+  <main class="wrapper">
+    <div class="container container-id">
+      <h1><i class="fas fa-seedling"></i> <span>Resultado da Identificação</span></h1>
+      <div class="result-container" id="resultContainer">
+        <div class="result-container-item" id="commonName"></div>
+        <div class="result-container-item" id="specie"></div>
+        <div class="result-container-item" id="family"></div>
+        <div class="result-container-item" id="type"></div>
+        <div class="result-container-item collapsible" id="descricao"></div>
+        <button id="toggleDesc" class="read-more-button">Ler mais</button>
+      </div>
 
-        <div class="footer">
-            <img src="images/bioccp.png" alt="Logo BioCCP">
-            <img src="images/uenp.png" alt="Logo UENP">
-            <img src="images/insta.png" alt="Instagram">
+      <div class="button-block double">
+        <div class="button-block">
+          <button class="action-button qr-highlight" id="btnScan">
+            <i class="fas fa-qrcode"></i> Nova identificação
+          </button>
         </div>
-    </main>
+        <a href="index.html" class="action-button back-button">
+          <i class="fas fa-arrow-left"></i> Voltar à Página Inicial
+        </a>
+      </div>
+    </div>
+
+    <footer class="footer">
+      <img src="images/bioccp.png" alt="Logo BioCCP" />
+      <img src="images/uenp.png" alt="Logo UENP" />
+      <img src="images/insta.png" alt="Instagram" />
+      <p class="credit">
+        Desenvolvido por <a href="https://github.com/wilsonfrantine" target="_blank">
+          <i class="fab fa-github"></i> Prof. Dr. Wilson Frantine-Silva
+        </a>
+      </p>
+    </footer>
+  </main>
+  <div id="qrModal" class="modal hidden">
+    <div class="modal-content">
+      <h2>Escanear QR Code</h2>
+      <div id="qr-reader" class="qr-reader-area"></div>
+      <button class="cancel-button" id="btnCancelScan">Cancelar</button>
+    </div>
+  </div>
+
+  <button id="backToTop" class="back-to-top hidden"><i class="fas fa-arrow-up"></i></button>
 </body>
 </html>
