@@ -1,90 +1,76 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Árvores UENP</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap" rel="stylesheet">
-    <style>
-        body, html {
-            height: 100%;
-            margin: 0;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-evenly;
-            align-items: center;
-            background-image: url('images/background.jpeg');
-            background-blend-mode: overlay;
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            background-color: rgba(255, 255, 255, 0.5);
-            font-family: 'Roboto', sans-serif;
-        }
-        .container {
-            text-align: center;
-            color: black; /* Cor do texto preta */
-            font-size: 8vw;
-            margin-top: 10vh; /* Margem superior para alinhar à parte superior */
-        }
-        button {
-                color: #0004b7;
-                background-color: rgba(0,0,0,0);
-                font-weight: bolder;
-                font-size: 5vw;
-                padding: 2% 4%;
-                border: none;
-                cursor: pointer;
-                font-family: 'Roboto', sans-serif;
-                width: 70%;         
-        }
-        .footer {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            height: 10%;
-            width: 100%;
-            background-color: rgba(0,0,0,0) /* Cor de fundo do rodapé */
-            position: fixed; /* Mantém o rodapé fixo na parte inferior da tela */
-            bottom: 0;
-        }
-        .footer img {
-            height: 50px; /* Altura das imagens */
-            width: auto; /* Largura automática proporcional à altura */
-            margin: 0 10px; /* Margem entre as imagens */
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>Árvores UENP</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <script src="https://unpkg.com/html5-qrcode"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+  <link rel="stylesheet" href="css/geral.css" />
+  <script src="js/index.js" defer></script>
 </head>
 <body>
-    <div class="container">Árvores UENP</div>
-    <div class="container">
-        <button id="botaoRedirecionar">Clique e saiba mais...</button>
-    </div>
-    <div class="footer">
-        <img src="images/bioccp.png" alt="BioCCP">
-        <img src="images/uenp.png" alt="UENP CCP">
-        <a href="https://www.instagram.com/biologiauenpccp/" target="_blank">
-            <img src="images/insta.png" alt="Instagram">
+  <div id="splash">
+    <div class="spinner"></div>
+    <p>Carregando...</p>
+  </div>
+
+  <main class="wrapper">
+    <div class="container"></div>
+
+    <section class="intro">
+      <div class="text-block">
+        <p id="introText" class="collapsible">
+          Bem-vindo ao projeto <strong>Árvores UENP</strong>! Aqui você poderá explorar, identificar e conhecer diversas espécies arbóreas presentes no nosso campus. Este projeto tem como objetivo promover o contato com a biodiversidade local, despertar o interesse pela conservação ambiental e incentivar o uso de tecnologias acessíveis como ferramentas educativas e de cidadania ambiental.
+        </p>
+        <button id="toggleIntro" class="read-more-button">Ler mais</button>
+      </div>
+      <div class="button-block">
+        <button class="action-button qr-highlight" id="btnScan">
+          <i class="fas fa-qrcode"></i> Identificar Planta
+        </button>
+      </div>
+    </section>
+
+    <section class="galeria">
+      <div class="gallery-search">
+        <input type="text" id="gallerySearch" placeholder="Pesquisar espécies..." />
+      </div>
+      <h2><i class="fas fa-tree"></i> Espécies em Destaque</h2>
+      <div id="galeria-lista" class="galeria-lista"></div>
+    </section>
+
+    <section class="sobre">
+      <div class="text-block">
+        <p id="sobreText" class="collapsible">
+          Esta iniciativa do curso de Ciências Biológicas da UENP-CCP promove o conhecimento da biodiversidade do nosso campus. Com apoio institucional, participação estudantil e ferramentas tecnológicas, buscamos ampliar o alcance da educação ambiental, tornando o processo de ensino-aprendizagem mais envolvente, acessível e interdisciplinar. Este site representa um esforço coletivo para valorizar o patrimônio natural local.
+        </p>
+        <button id="toggleSobre" class="read-more-button">Ler mais</button>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <img src="images/bioccp.png" alt="Logo BioCCP" />
+      <img src="images/uenp.png" alt="Logo UENP" />
+      <img src="images/insta.png" alt="Instagram" />
+      <p class="credit">
+        Desenvolvido por <a href="https://github.com/wilsonfrantine" target="_blank">
+          <i class="fab fa-github"></i> Prof. Dr. Wilson Frantine-Silva
         </a>
+      </p>
+    </footer>
+  </main>
+
+  <button id="backToTop" class="back-to-top hidden"><i class="fas fa-arrow-up"></i></button>
+
+  <div id="qrModal" class="modal hidden">
+    <div class="modal-content">
+      <h2>Escanear QR Code</h2>
+      <div id="qr-reader" class="qr-reader-area"></div>
+      <button class="cancel-button" id="btnCancelScan">Cancelar</button>
     </div>
-
-    <script>
-        document.getElementById('botaoRedirecionar').addEventListener('click', function() {
-            // Função para extrair o valor de um parâmetro da URL
-            function obterValorParametro(nomeParametro) {
-                var urlSearchParams = new URLSearchParams(window.location.search);
-                return urlSearchParams.get(nomeParametro);
-            }
-
-            var valorQrcode = obterValorParametro('qrcode');
-
-            if (valorQrcode) {
-                var destino = "http://novapagina.com/arvores/" + valorQrcode + ".html";
-                window.location.href = destino;
-            } else {
-                console.error("QR Code não fornecido na URL.");
-            }
-        });
-    </script>
+  </div>
 </body>
 </html>
