@@ -52,8 +52,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         item.className = "galeria-item";
         item.innerHTML = `
           <a href="queplantae.html?qrcode=${encodeURIComponent(especieOriginal)}">
-            <img src="${imagemFinal}" alt="${nomePopular}" 
-              onerror="this.onerror=null; this.src='images/fallback.png';">
+            <img src="${imagemFinal}" alt="${nomePopular}">
           </a>
           <p><strong>${nomePopular}</strong><br><em>${especieOriginal}</em></p>
         `;

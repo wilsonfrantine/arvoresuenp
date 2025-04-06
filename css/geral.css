@@ -86,13 +86,11 @@ body.fade-in {
 .collapsible {
   overflow: hidden;
   display: -webkit-box;
-  -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
   transition: all 0.4s ease-in-out;
   position: relative;
 }
 .collapsible.expanded {
-  -webkit-line-clamp: unset;
   max-height: none;
 }
 .read-more-button {
